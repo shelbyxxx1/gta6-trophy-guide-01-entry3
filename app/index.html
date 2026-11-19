@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Leonida Fieldbook — GTA VI Trophy Guide & Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <p class="kicker">A fieldbook for one platinum · Grand Theft Auto VI · PlayStation 5</p>
+  <h1>The Leonida <span class="accent">Fieldbook</span></h1>
+  <p class="standfirst" id="standfirst">Loading the official trophy list…</p>
+  <section class="progress-card" aria-label="Your progress">
+    <div class="ring-wrap">
+      <svg class="ring" viewBox="0 0 120 120" role="img" aria-label="Completion ring">
+        <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+        <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"></circle>
+      </svg>
+      <div class="ring-label"><strong id="ringPct">0%</strong><span>earned</span></div>
+    </div>
+    <div class="grade-board" id="gradeBoard"></div>
+    <div class="progress-actions">
+      <button type="button" id="exportBtn">Export progress</button>
+      <label class="import-label">Import progress<input type="file" id="importFile" accept="application/json" hidden></label>
+      <button type="button" id="demoBtn">Load sample progress</button>
+      <button type="button" id="resetBtn">Reset</button>
+      <p class="save-note">Progress is saved in this browser (localStorage). Export it to a file to keep or move it.</p>
+    </div>
+  </section>
+</header>
+
+<nav class="view-tabs" aria-label="Guide views">
+  <button type="button" data-view="checklist" class="tab active">Checklist & guides</button>
+  <button type="button" data-view="roadmap" class="tab">Roadmap to platinum</button>
+  <button type="button" data-view="watchlist" class="tab">Missable watchlist</button>
+  <button type="button" data-view="sources" class="tab">Sources & method</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view">
+    <form class="controls" id="controls">
+      <label>Search
+        <input type="search" id="searchBox" placeholder="Name, mission, person, place…">
+      </label>
+      <label>Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable (watchlist)</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="online">Online</option>
+          <option value="platinum">Platinum</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="hideEarned"> Hide earned</label>
+      <label class="check"><input type="checkbox" id="spoilerToggle"> Spoiler shield: hide story trophies until earned</label>
+    </form>
+    <p class="result-line" id="resultLine"></p>
+    <div id="trophyList" class="trophy-list"></div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="view-intro">Eight stages, in the order the official descriptions suggest: story first, named missions inside it, side stories next, then the great Leonida tour, the activity bench, and the 100% push last. Every one of the 55 trophies appears in exactly one stage.</p>
+    <div id="roadmapList"></div>
+  </section>
+
+  <section id="view-watchlist" class="view" hidden>
+    <h2>Missable watchlist</h2>
+    <p class="view-intro">Built from the official descriptions, not from rumour: a trophy is flagged here when its description names a condition that can fail in the moment it is attempted — undetected, a single use, back-to-back, a second try, a choice. Story trophies are not flagged, because their descriptions ask only that you complete a mission or a chapter. For each flagged trophy, the guide states the condition and the save to make before you attempt it.</p>
+    <div id="watchList" class="trophy-list"></div>
+  </section>
+
+  <section id="view-sources" class="view" hidden>
+    <h2>Sources & method</h2>
+    <p class="view-intro" id="methodText"></p>
+    <div id="sourceList"></div>
+    <h3>How to read a guide entry</h3>
+    <p>Every trophy card shows the official name, description and grade exactly as PlayStation publishes them, then a guide written for this entry in our own words — what to do, where and how, and when it can be missed — and a source line naming where its facts come from. A cited guide beats an uncited one: if a detail is not in the official description or the kit lines, the guide says so instead of inventing it.</p>
+  </section>
+</main>
+
+<footer>
+  <p>The Leonida Fieldbook is an original, unofficial companion. It uses no Rockstar Games logo, artwork or screenshots; the look is its own. Trophy names and descriptions are reproduced from the official PlayStation list. Works fully offline — every file it loads lives under <code>app/</code>.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
