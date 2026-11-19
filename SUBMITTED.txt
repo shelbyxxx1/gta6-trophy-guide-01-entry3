@@ -1,0 +1,7 @@
+make.fun gta6-trophy-guide-01 — submitted
+Submission: 01a1f441-7575-72c9-8488-94a35319802f
+Title: The Leonida Fieldbook — GTA VI trophy guide & tracker
+Submitted commit: 34179e5d3495bece78fe0dfa4a6a64439635e782
+Recording: 01a1f438-a9fe-71f3-a032-48c785c040a7 (sealed, exactly 1 session)
+Status at submit: submitted; round 1 passed every validity check, dev grading under way
+Entries close: 2026-11-21T11:00:00Z — result due 2026-12-06T11:00:00Z
